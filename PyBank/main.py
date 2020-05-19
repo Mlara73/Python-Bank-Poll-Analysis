@@ -4,8 +4,8 @@
 # read the header
 # Create a list for months [0] and profit/losses [1].
 # Count months elements using len function.
-# The net total amount of "Profit/Losses" over the entire period
-# The average of the changes in "Profit/Losses" over the entire period
+# The average of the changes in "Profit/Losses" over the entire period (avergae_change)
+# The net total amount of "Profit/Losses" over the entire period (average_total)
 # The greatest increase in profits (date and amount) over the entire period
 # The greatest decrease in losses (date and amount) over the entire period
 
@@ -55,6 +55,8 @@ with open(csvpath, 'r') as csvfile:
             cur = int(profit_losses[row])
             nxt = int(profit_losses[row+1])
             average_change.append(nxt - cur)
+
+# Average Total
 
     average_total = 0
     for row in range(len(average_change)):
