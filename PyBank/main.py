@@ -1,13 +1,17 @@
-# Import Modules csv, os.
-# Store Path as csvpath.
-# Open and read the file
-# read the header
-# Create a list for months [0] and profit/losses [1].
-# Count months elements using len function.
-# The average of the changes in "Profit/Losses" over the entire period (avergae_change)
-# The net total amount of "Profit/Losses" over the entire period (average_total)
-# The greatest increase in profits (date and amount) over the entire period
-# The greatest decrease in losses (date and amount) over the entire period
+# Import csv, os modules
+# Store csvpath.
+# Open, read the csvfile.
+# Read the csv_header.
+# Create months_count and profit_losses list looping through the csvfile.
+# Calculate total_months with len funcion.
+# Calculate total_volume over profit_losses list.
+# Create a list to store the average_change, looping through the profit_losses list, calculating the change between each period.
+# Calculate the average_total for the entire period.
+# Calculate the max_avg in profits using the max function with the average_change list. Calculate index_max to match the month_max.
+# Calculate the min_avg in profits using the min function with the average_change list. Calculate index_min for to match the month_mix.
+# Print the results to git bash and text file as "output.txt"
+
+#Importing modules
 
 import os
 import csv
@@ -18,37 +22,37 @@ months_count = []
 profit_losses = []
 average_change = []
 
-#Path Storing
+#Storing csvpath
 
 csvpath = os.path.join("Resources","budget_data.csv")
 
-# Open and read file
+# Opening and reading csvfile
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     
 
-#Header
+#Reading the csv_header
 
     csv_header = next(csvreader)
 
-# Months and Profit/Losses Lists
+# Creating lists for months count and profit_losses
 
     total_volume = 0
     for row in csvreader:
         months_count.append(row[0])
         profit_losses.append(row[1])
         
-# Total Volume Calculation
+# Calculating the total volume
 
         total_volume += int(row[1])
     
-# Months counting
+# Counting months with "len" function
 
     total_months = len(months_count)
     
 
-# Average Change
+# Calculating the average change between each period
 
     for row in range(len(profit_losses)):
         if row+1 < len(profit_losses):
@@ -56,14 +60,14 @@ with open(csvpath, 'r') as csvfile:
             nxt = int(profit_losses[row+1])
             average_change.append(nxt - cur)
 
-# Average Total
+# Calculating the average total for the entire period
 
     average_total = 0
     for row in range(len(average_change)):
         average_total += average_change[row]
     average_total = (average_total/len(average_change))
     
-# Maximum and Minimum Decrease
+# Calculating max average, min average and corresponding indexes to search the respectively month
 
     max_avg = max(average_change)
     index_max = average_change.index(max_avg)
@@ -73,6 +77,7 @@ with open(csvpath, 'r') as csvfile:
     month_min = months_count[index_min+1]
     
 # Git Bash Results
+
 print(f"Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
@@ -82,11 +87,12 @@ print(f"Greatest Increase in Profits: {month_max} (${max_avg})")
 print(f"Greatest Increase in Profits: {month_min} (${min_avg})")
 
 # Writting results to text
+# Saving the output_file path
 
-# save the output file path
 output_file = os.path.join("Analysis","output.txt")
 
-# open the output file, create a header row, and then write the zipped object to the csv
+# Opening the output_file and printing results:
+
 with open(output_file, "w") as datafile:
     print(f"Financial Analysis",file = datafile, end="\n")
     print("----------------------------",file = datafile, end="\n")
