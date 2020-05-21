@@ -11,7 +11,7 @@
 # Print to Git Bash
 # Print to "Output.txt" file.
 
-#modules import
+#Modules import
 
 import os
 import csv
@@ -26,23 +26,22 @@ candidate_list = []
 candit_list = []
 candidate_dic = dict()
 
-#open and read the csvfile
+#Open and read csvfile
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
 
-#Header
+#Read the header
 
     csv_header = next(csvreader)
 
-#Candidates lists: this will output the total votes
+#Candidates list from csvfile
 
     for row in csvreader:
         candidate_list.append(row[2])
     
 # Candidates and votes
-
-# A Loop through candidate_list, checking if the candidate exists in the dictionary
+# A Loop through candidate_list, checking if the candidate exists in candidate_dic
 
     for candidate in candidate_list:
         if candidate in candidate_dic:
@@ -50,23 +49,26 @@ with open(csvpath, 'r') as csvfile:
         else:
             candidate_dic[candidate] = 1
 
-# List creation per percentage, candidate names, and votes per candidate.
+# Lists to store candidates names (list_candidates), total votes per candidates (candidates_votes), and votes percentage per candidat(list_percentage)
         
     list_candidates = [candidate for candidate in candidate_dic.keys()]
     candidates_votes = list(candidate_dic.values())
     list_percentage = [round(float((votes/len(candidate_list)*100)),3) for votes in candidate_dic.values()]
     
-#From the above lists
+# Determining the max number within candidates_votes lists
     winner_votes = max(candidates_votes)
+#Determining the index for the max votes number
     winner_index = (candidates_votes.index(winner_votes))
+# Matching the winener index within list_candidates
     winner_name = list_candidates[winner_index]
 
-# Print to terminal
+# Printing to git bash
 
     print("Election Results")
     print("-------------------------------------")
     print(f"Total Votes: {len(candidate_list)}")
     print("--------------------------------------")
+# Loop to print indexes from list_percentage, list_candidates, candidates_votes
     for item in range(len(list_candidates)):
         list_percentage[item] = format(list_percentage[item],'.3f')
         print(f"{list_candidates[item]} : {list_percentage[item]}% ({candidates_votes[item]})")
@@ -75,21 +77,20 @@ with open(csvpath, 'r') as csvfile:
     print("--------------------------------------")
     
 # Writting results to text
-
-# save the output file path
+# Save the output file path
 output_file = os.path.join("Analysis","output.txt")
 
-# open the output text file in "Writting Mode"
+# Open the output text file in "Writting Mode"
 with open(output_file, "w") as datafile:
 
-# Text Print
+# Text file print
 
     print("Election Results",file = datafile, end="\n")
     print("-------------------------------------", file = datafile, end="\n")
     print(f"Total Votes: {len(candidate_list)}", file = datafile, end="\n")
     print("--------------------------------------",file = datafile, end="\n")
 
-    # Loop through list range to find each index name
+# Loop to print indexes from list_percentage, list_candidates, candidates_votes
 
     for items in range(len(list_candidates)):
         list_percentage[item] = format(float(list_percentage[items]),'.3f')
@@ -98,6 +99,7 @@ with open(output_file, "w") as datafile:
     print(f"Winner: {winner_name}", file = datafile, end="\n")
     print("--------------------------------------", file = datafile, end="\n")   
 
+Testing
 # # Set of candidates
 #     cand_set = set(candidate_list)
 #     for candidate in cand_set:
