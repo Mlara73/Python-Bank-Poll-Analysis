@@ -36,7 +36,7 @@
   Greatest Increase in Profits: Feb-2012 ($1926159)
   Greatest Decrease in Profits: Sep-2013 ($-2196167)
   ```
-![PyBank](Images\PyBank_Git_Bash.PNG)
+![PyBank](Images/PyBank_Git_Bash.PNG)
 
 ##### PyPoll:
 ```text
@@ -52,6 +52,6 @@
   Winner: Khan
   -------------------------
   ```
-![PyPoll](Images\PyPoll_Git_Bash.PNG)	
+![PyPoll](Images/PyPoll_Git_Bash.PNG)	
 
 ###### For additional information, please see the source code for both programs within PyBank and PyPoll folders
