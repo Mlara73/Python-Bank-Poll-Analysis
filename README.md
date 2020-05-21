@@ -13,11 +13,20 @@
 ###### 3. To calculate the average of changes in "Profit/Losses" over the entire period.
 ###### 4. To calculate the greatest in profits and the greates decrease in losses over the entire period, defining also the corresponding date and amount.
 
+##### PyPoll:
+
+###### 1. To calculate the total number of votes cast.
+###### 2. To generate a list of candidates who received votes.
+###### 3. To calculate the total number of votes each candidate won.
+###### 4. To calculate the percentage of votes each candidate won.
+###### 5. To show the winner candidate based on popular vote.
+
 ### Anslysis and Results
+
+###### As a result, the program generates the following analysis as an "output.txt" file (stored on the "Analysis" folder) and at GitBash/Terminal screen:
 
 ##### PyBank:
 
-###### As a result, the program generates the following analysis as an "output.txt" file (stored on the "Analysis" folder) and at GitBash/Terminal screen:
   ```text
   Financial Analysis
   ----------------------------
@@ -27,6 +36,22 @@
   Greatest Increase in Profits: Feb-2012 ($1926159)
   Greatest Decrease in Profits: Sep-2013 ($-2196167)
   ```
-![PyBank](Images\Git_Bash_Results.PNG)
-	
-	
+![PyBank](Images\PyBank_Git_Bash.PNG)
+
+##### PyPoll:
+```text
+  Election Results
+  -------------------------
+  Total Votes: 3521001
+  -------------------------
+  Khan: 63.000% (2218231)
+  Correy: 20.000% (704200)
+  Li: 14.000% (492940)
+  O'Tooley: 3.000% (105630)
+  -------------------------
+  Winner: Khan
+  -------------------------
+  ```
+![PyPoll](Images\PyPoll_Git_Bash.PNG)	
+
+###### For additional information, please see the source code for both programs within PyBank and PyPoll folders
