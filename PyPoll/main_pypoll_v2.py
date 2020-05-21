@@ -70,7 +70,7 @@ with open(csvpath, 'r') as csvfile:
     print("--------------------------------------")
 # Loop to print indexes from list_percentage, list_candidates, candidates_votes
     for item in range(len(list_candidates)):
-        list_percentage[item] = format(list_percentage[item],'.3f')
+        list_percentage[item] = format(float(list_percentage[item]),'.3f')
         print(f"{list_candidates[item]} : {list_percentage[item]}% ({candidates_votes[item]})")
     print("--------------------------------------")
     print(f"Winner: {winner_name}")
@@ -86,25 +86,22 @@ with open(output_file, "w") as datafile:
 # Text file print
 
     print("Election Results",file = datafile, end="\n")
-    print("-------------------------------------", file = datafile, end="\n")
+    print("------------------------", file = datafile, end="\n")
     print(f"Total Votes: {len(candidate_list)}", file = datafile, end="\n")
-    print("--------------------------------------",file = datafile, end="\n")
-
-# Loop to print indexes from list_percentage, list_candidates, candidates_votes
-
+    print("------------------------",file = datafile, end="\n")
     for items in range(len(list_candidates)):
-        list_percentage[item] = format(float(list_percentage[items]),'.3f')
-        print(f"{list_candidates[items]} : {list_percentage[item]}% ({candidates_votes[item]})", file = datafile, end="\n")
-    print("--------------------------------------", file = datafile, end="\n")
+        list_percentage[items] = format(float(list_percentage[items]),'.3f')
+        print(f"{list_candidates[items]} : {list_percentage[items]}% ({candidates_votes[items]})", file = datafile, end="\n")
+    print("--------------------------", file = datafile, end="\n")
     print(f"Winner: {winner_name}", file = datafile, end="\n")
-    print("--------------------------------------", file = datafile, end="\n")   
+    print("--------------------------", file = datafile, end="\n")   
 
-Testing
-# # Set of candidates
-#     cand_set = set(candidate_list)
-#     for candidate in cand_set:
-#         candit_list.append(cand_set)
-#     print(candit_list)
+#Testing
+# Set of candidates
+#   cand_set = set(candidate_list)
+#       for candidate in cand_set:
+#           candit_list.append(cand_set)
+# print(candit_list)
 
    
  
