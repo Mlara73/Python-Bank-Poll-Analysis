@@ -8,4 +8,15 @@
 ###### 3. To calculate the average of changes in "Profit/Losses" over the entire period.
 ###### 4. To calculate the greatest in profits and the greates decrease in losses over the entire period, defining also the corresponding date and amount.
 ### Anslysis and Results
-###### As a result, the program generates the following analysis as an "output.txt" file (stored on the "Resources" folder) and at GitBash/Terminal screen:
+##### PyBank:
+###### As a result, the program generates the following analysis as an "output.txt" file (stored on the "Analysis" folder) and at GitBash/Terminal screen:
+  ```text
+  Financial Analysis
+  ----------------------------
+  Total Months: 86
+  Total: $38382578
+  Average  Change: $-2315.12
+  Greatest Increase in Profits: Feb-2012 ($1926159)
+  Greatest Decrease in Profits: Sep-2013 ($-2196167)
+  ```
+  ![Git Bash Results](Images/Git_Bash_Results.png)
