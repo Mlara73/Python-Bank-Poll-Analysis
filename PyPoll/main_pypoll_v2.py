@@ -89,6 +89,7 @@ with open(output_file, "w") as datafile:
     print("------------------------", file = datafile, end="\n")
     print(f"Total Votes: {len(candidate_list)}", file = datafile, end="\n")
     print("------------------------",file = datafile, end="\n")
+# Loop to print indexes from list_percentage, list_candidates, candidates_votes
     for items in range(len(list_candidates)):
         list_percentage[items] = format(float(list_percentage[items]),'.3f')
         print(f"{list_candidates[items]} : {list_percentage[items]}% ({candidates_votes[items]})", file = datafile, end="\n")
