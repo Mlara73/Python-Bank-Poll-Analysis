@@ -96,13 +96,5 @@ with open(output_file, "w") as datafile:
     print("--------------------------", file = datafile, end="\n")
     print(f"Winner: {winner_name}", file = datafile, end="\n")
     print("--------------------------", file = datafile, end="\n")   
-
-#Testing
-# Set of candidates
-#   cand_set = set(candidate_list)
-#       for candidate in cand_set:
-#           candit_list.append(cand_set)
-# print(candit_list)
-
    
  
